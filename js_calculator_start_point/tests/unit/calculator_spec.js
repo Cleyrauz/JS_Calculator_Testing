@@ -35,4 +35,12 @@ describe('calculator', function () {
     assert.equal(15, calculator.runningTotal);
   });
 
+  it('should be able to divide 21/7 and get 3', function(){
+    calculator.numberClick(21);
+    calculator.operatorClick('/');
+    calculator.numberClick(7);
+    calculator.operatorClick('=');
+    assert.equal(3, calculator.runningTotal);
+  });
+
 });
