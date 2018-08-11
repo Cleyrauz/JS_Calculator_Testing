@@ -19,4 +19,12 @@ describe('calculator', function () {
     assert.equal(5, calculator.runningTotal);
   });
 
+  it('should be able to subtract 7-4 and get 3', function(){
+    calculator.numberClick(7);
+    calculator.operatorClick('-');
+    calculator.numberClick(4);
+    calculator.operatorClick('=');
+    assert.equal(3, calculator.runningTotal);
+  });
+  
 });
