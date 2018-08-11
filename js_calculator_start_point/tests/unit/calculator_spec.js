@@ -11,7 +11,7 @@ describe('calculator', function () {
     assert.equal(true, true)
   });
 
-  it('should be able to add 1+4 and get 5', function(){
+  it('should be able to add', function(){
     calculator.numberClick(1);
     calculator.operatorClick('+');
     calculator.numberClick(4);
@@ -19,7 +19,7 @@ describe('calculator', function () {
     assert.equal(5, calculator.runningTotal);
   });
 
-  it('should be able to subtract 7-4 and get 3', function(){
+  it('should be able to subtract', function(){
     calculator.numberClick(7);
     calculator.operatorClick('-');
     calculator.numberClick(4);
@@ -27,7 +27,7 @@ describe('calculator', function () {
     assert.equal(3, calculator.runningTotal);
   });
 
-  it('should be able to multiply 3x5 and get 15', function(){
+  it('should be able to multiply', function(){
     calculator.numberClick(3);
     calculator.operatorClick('*');
     calculator.numberClick(5);
@@ -35,7 +35,7 @@ describe('calculator', function () {
     assert.equal(15, calculator.runningTotal);
   });
 
-  it('should be able to divide 21/7 and get 3', function(){
+  it('should be able to divide', function(){
     calculator.numberClick(21);
     calculator.operatorClick('/');
     calculator.numberClick(7);
@@ -47,6 +47,16 @@ describe('calculator', function () {
     calculator.numberClick(2);
     calculator.numberClick(3);
     assert.equal(23, calculator.runningTotal);
+  });
+
+  it('should be able to chain multiple operations together', function(){
+    calculator.numberClick(21);
+    calculator.operatorClick('/');
+    calculator.numberClick(3);
+    calculator.operatorClick('+');
+    calculator.numberClick(3);
+    calculator.operatorClick('=');
+    assert.equal(10, calculator.runningTotal);
   });
 
 });
