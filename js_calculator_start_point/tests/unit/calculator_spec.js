@@ -26,5 +26,13 @@ describe('calculator', function () {
     calculator.operatorClick('=');
     assert.equal(3, calculator.runningTotal);
   });
-  
+
+  it('should be able to multiply 3x5 and get 15', function(){
+    calculator.numberClick(3);
+    calculator.operatorClick('*');
+    calculator.numberClick(5);
+    calculator.operatorClick('=');
+    assert.equal(15, calculator.runningTotal);
+  });
+
 });
