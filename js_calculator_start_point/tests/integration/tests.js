@@ -16,12 +16,21 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
   })
 
-  it('can have a running total of numbers', function(){
+  it('should have a running total of numbers', function(){
     running_total = element(by.css('#running_total'))
     element(by.css('#number2')).click();
     element(by.css('#number2')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('22');
 
   })
+
+  it('should be able to add numbers and display the result of the operation', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number2')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('4');
+  });
 
 });
