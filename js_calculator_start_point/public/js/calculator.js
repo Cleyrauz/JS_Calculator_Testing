@@ -19,8 +19,13 @@ Calculator.prototype = {
     this.runningTotal = parseFloat(this.previousTotal) * parseFloat(number);
   },
 
+//If you divide by zero the screen return Error instead of Infinity
   divide: function(number){
-    this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+    if(number === 0){
+      this.runningTotal = 'Error';
+    } else {
+      this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+    }
   },
 
   numberClick: function(number) {

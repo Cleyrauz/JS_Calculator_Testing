@@ -102,4 +102,8 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('40004600');
   });
 
+  // it('should display error on screen if you divide by zero' function(){
+  //
+  // });
+
 });
